@@ -5,54 +5,108 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>PM-KR SPARC sheets</title>
 <style>
-  :root{
-    --bg:#14081f; --card:#231433; --ink:#f6f1ff; --mute:#b9a8d4;
-    --green:#39FF14; --pink:#FF2D95; --yellow:#FFF3B0; --line:#4a3568;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,sans-serif}
-  header{position:sticky;top:0;background:#1a0b2e;padding:12px 16px;border-bottom:1px solid var(--line);z-index:2}
-  header h1{margin:0;font-size:18px;color:var(--green)}
-  header p{margin:4px 0 0;font-size:12px;color:var(--mute)}
-  nav{display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px}
-  nav button{background:#3d1a6e;color:#fff;border:0;border-radius:999px;padding:8px 12px;cursor:pointer}
-  nav button.on{background:var(--pink)}
-  main{padding:0 16px 40px;max-width:1100px;margin:0 auto}
-  .note{background:var(--card);padding:12px;border-radius:12px;margin:8px 0;color:var(--mute);font-size:14px}
-  table{width:100%;border-collapse:collapse;margin:10px 0 24px;font-size:13px}
-  th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
-  th{background:#1a0b2e}
-  tr.hit td{background:#3a3210;color:var(--yellow)}
-  input{width:100%;padding:10px;border-radius:8px;border:1px solid var(--line);background:#1a0b2e;color:#fff;margin:8px 0}
-  a{color:var(--green)}
-  section{display:none}
-  section.on{display:block}
-</style>
-</head>
-<body>
-<header>
-  <h1>PM-KR-2026-NSW SPARC sheets</h1>
-  <p>Separate bench. Black squares on the old PDF were missing font glyphs (10^33), not redacted cells. Palette kept.</p>
-</header>
+:root{--bg:#14081f;--card:#231433;--ink:#f6f1ff;--mute:#b9a8d4;--green:#39FF14;--pink:#FF2D95;--yellow:#FFF3B0;--line:#4a3568;}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,sans-serif}
+header{position:sticky;top:0;background:#1a0b2e;padding:12px 16px;border-bottom:1px solid var(--line);z-index:2}
+h1{margin:0;font-size:18px;color:var(--green)}header p{margin:4px 0 0;font-size:12px;color:var(--mute)}
+nav{display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px}
+nav button{background:#3d1a6e;color:#fff;border:0;border-radius:999px;padding:8px 12px}
+nav button.on{background:var(--pink)}
+main{padding:0 16px 40px;max-width:1100px;margin:0 auto}
+.note{background:var(--card);padding:12px;border-radius:12px;margin:8px 0;color:var(--mute);font-size:14px}
+table{width:100%;border-collapse:collapse;margin:10px 0 24px;font-size:13px}
+th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}th{background:#1a0b2e}
+tr.hit td{background:#3a3210;color:var(--yellow)}
+input{width:100%;padding:10px;border-radius:8px;border:1px solid var(--line);background:#1a0b2e;color:#fff;margin:8px 0}
+section{display:none}section.on{display:block}
+</style></head><body>
+<header><h1>PM-KR-2026-NSW SPARC sheets</h1>
+<p>Black squares were missing PDF font glyphs (10^33), not redacted cells. Palette kept.</p></header>
 <nav>
-  <button class="on" data-t="key">Column key</button>
-  <button data-t="light">Light bend</button>
-  <button data-t="df2">DF2</button>
-  <button data-t="df49">DF4 / DF9</button>
-  <button data-t="am">Angular momentum</button>
-  <button data-t="zpe">ZPE forms</button>
-  <button data-t="press">Pressures</button>
-  <button data-t="bh">Black holes</button>
-  <button data-t="mast">Where full files live</button>
+<button class="on" data-t="key">Column key</button>
+<button data-t="light">Light bend</button>
+<button data-t="df2">DF2</button>
+<button data-t="df49">DF4 / DF9</button>
+<button data-t="am">Angular momentum</button>
+<button data-t="zpe">ZPE</button>
+<button data-t="press">Pressures</button>
+<button data-t="bh">Black holes</button>
+<button data-t="mast">Full files</button>
 </nav>
 <main>
-<input id="q" placeholder="filter any table on this page"/>
-<p>Open this file on the phone. Yellow rows are the DF2 sigma bin (~8 / 8.5). See README for Mac Mini path.</p>
+<input id="q" placeholder="filter tables"/>
+<section class="on" id="key"><h2>Column key</h2>
+<div class="note">Match UNIT before matching 1121.246.</div>
+<table><tr><th>Symbol</th><th>Meaning</th><th>Unit</th><th>D?</th></tr>
+<tr><td>v / sigma</td><td>velocity / dispersion</td><td>km/s</td><td>no</td></tr>
+<tr><td>D</td><td>distance</td><td>Mpc</td><td>is D</td></tr>
+<tr><td>M_star</td><td>stellar mass</td><td>Msun</td><td>yes D^2</td></tr>
+<tr><td>j or L</td><td>angular momentum</td><td>m^2/s or pc km/s</td><td>need unit</td></tr>
+<tr><td>alpha</td><td>light deflection</td><td>arcsec</td><td>b</td></tr>
+</table></section>
+<section id="light"><h2>Light bending</h2>
+<table><tr><th>Item</th><th>Number</th></tr>
+<tr><td>GR Sun limb</td><td>1.75 arcsec</td></tr>
+<tr><td>Newton 1911</td><td>0.87 arcsec</td></tr>
+<tr><td>Eddington 1919</td><td>1.61 +/- 0.30</td></tr>
+<tr><td>Sobral 1919</td><td>1.98 +/- 0.12</td></tr>
+<tr><td>Sobral 1979</td><td>1.52 +/- 0.34</td></tr>
+<tr><td>VLBI now</td><td>GR ~ 10^-4</td></tr>
+</table></section>
+<section id="df2"><h2>DF2</h2>
+<div class="note">Yellow = your 8 / 8.5 bin.</div>
+<table><tr><th>Q</th><th>V</th></tr>
+<tr><td>RA Dec</td><td>02h41m46.8s -08d24m12s</td></tr>
+<tr><td>D SBF 2018</td><td>19.0 +/- 1.7 Mpc</td></tr>
+<tr><td>D Trujillo</td><td>~13 Mpc</td></tr>
+<tr><td>D HST TRGB</td><td>22.1 +/- 1.2 Mpc</td></tr>
+<tr><td>D JWST 2026</td><td>17.6 +/- 0.6 Mpc</td></tr>
+<tr><td>D GC-sigma 2025</td><td>16.2 +/- 1.3 Mpc</td></tr>
+<tr class="hit"><td>sigma_obs 2018</td><td>8.4 km/s</td></tr>
+<tr class="hit"><td>sigma_stars 2019</td><td>8.5 +2.3/-3.1 km/s</td></tr>
+<tr><td>sigma MUSE</td><td>10.8 +3.2/-4.0</td></tr>
+<tr><td>sigma GCS 2025</td><td>14.86 or 8.63 drop GC101</td></tr>
+</table></section>
+<section id="df49"><h2>DF4 / DF9</h2>
+<table><tr><th>Q</th><th>DF4</th><th>DF9</th></tr>
+<tr><td>v_sys</td><td>1444.6</td><td>1680 +/- 10</td></tr>
+<tr><td>sigma stars</td><td>8.0 +2.3/-1.9</td><td>stars-only 2026</td></tr>
+<tr><td>Re @20 Mpc</td><td>~1.6 kpc</td><td>1.08 kpc</td></tr>
+</table></section>
+<section id="am"><h2>Angular momentum</h2>
+<table><tr><th>Object</th><th>Value</th></tr>
+<tr><td>Earth spin L</td><td>5.8e33 kg m^2/s</td></tr>
+<tr><td>Earth spin j</td><td>9.7e8 m^2/s</td></tr>
+<tr><td>Earth orbit j</td><td>4.45e15 m^2/s</td></tr>
+<tr><td>Sgr A* a*</td><td>0.90 +/- 0.06</td></tr>
+<tr><td>DF2 sigma*Re</td><td>~1.9e4 pc km/s</td></tr>
+</table></section>
+<section id="zpe"><h2>ZPE forms</h2>
+<table><tr><th>Form</th><th>Number</th></tr>
+<tr><td>Casimir</td><td>uN-mN at um</td></tr>
+<tr><td>Observed Lambda</td><td>5.96e-27 kg/m^3</td></tr>
+<tr><td>QFT naive</td><td>10^111-10^113 J/m^3</td></tr>
+</table></section>
+<section id="press"><h2>Pressures</h2>
+<table><tr><th>Q</th><th>N</th></tr>
+<tr><td>P_ram quiet</td><td>~1 nPa</td></tr>
+<tr><td>P_ram storm</td><td>10-100 nPa</td></tr>
+<tr><td>rho_DM local</td><td>5e-22 kg/m^3</td></tr>
+<tr><td>rho_L c^2</td><td>~6e-10 Pa</td></tr>
+</table></section>
+<section id="bh"><h2>Black holes</h2>
+<table><tr><th>Object</th><th>Rs</th></tr>
+<tr><td>Earth</td><td>8.87 mm</td></tr>
+<tr><td>Sun</td><td>2.95 km</td></tr>
+<tr><td>Sgr A*</td><td>~12 million km</td></tr>
+</table></section>
+<section id="mast"><h2>MAST</h2>
+<p class="note">HST 14644, 15851, 16912. JADES is GOODS not DF2. Mini path: /Users/frog/Desktop/ProjectMidnightPurple/sparc/sheets-2026-09-23/</p>
+</section>
 </main>
 <script>
 const buttons=[...document.querySelectorAll('nav button')];
 const secs=[...document.querySelectorAll('section')];
-buttons.forEach(b=>b.onclick=()=>{buttons.forEach(x=>x.classList.remove('on'));secs.forEach(x=>x.classList.remove('on'));b.classList.add('on');const el=document.getElementById(b.dataset.t);if(el)el.classList.add('on');});
-</script>
-</body>
-</html>
+buttons.forEach(b=>b.onclick=()=>{buttons.forEach(x=>x.classList.remove('on'));secs.forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');});
+document.getElementById('q').oninput=e=>{const t=e.target.value.toLowerCase();document.querySelectorAll('section.on tr').forEach(r=>{if(r.querySelector('th'))return;r.style.display=r.innerText.toLowerCase().includes(t)?'':'none';});};
+</script></body></html>
